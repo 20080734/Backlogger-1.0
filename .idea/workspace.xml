@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75837919-ed3c-476f-9fff-14bbf633924a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/GameModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/controllers/BacklogController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/BacklogMemStore.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/GameStore.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/views/BacklogView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/main/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/main/main.kt" afterDir="false" />
     </list>
@@ -22,14 +25,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/main/main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1433">
-              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+            <state relative-caret-position="60">
+              <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/views/BacklogView.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1051">
+              <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
               <folding>
-                <element signature="e#41#120#0" expanded="true" />
+                <element signature="e#142#249#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/controllers/BacklogController.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+              <folding>
+                <element signature="e#48#230#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/GameStore.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/BacklogMemStore.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -57,6 +99,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Interface" />
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
@@ -72,13 +115,17 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/main.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/name/main.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/GameModel.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/GameStore.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/BacklogMemStore.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/views/BacklogView.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/main/main.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/controllers/BacklogController.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="805" />
-    <option name="width" value="1122" />
+    <option name="x" value="915" />
+    <option name="width" value="1012" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -123,6 +170,42 @@
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="console" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Backlogger-1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backlogger-1.0" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backlogger-1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backlogger-1.0" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backlogger-1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backlogger-1.0" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backlogger-1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backlogger-1.0" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -131,7 +214,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604247524642" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604251543718" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
@@ -194,23 +277,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="805" y="0" width="1122" height="1047" extended-state="0" />
+    <frame x="915" y="0" width="1012" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17231639" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19222689" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.32932165" />
-      <window_info anchor="bottom" id="Messages" weight="0.32932165" />
+      <window_info anchor="bottom" id="Messages" weight="0.7680525" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28118163" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19256018" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -241,12 +325,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/GameStore.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/models/BacklogMemStore.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/main/main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1433">
-          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+        <state relative-caret-position="60">
+          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/views/BacklogView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1051">
+          <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
           <folding>
-            <element signature="e#41#120#0" expanded="true" />
+            <element signature="e#142#249#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/wit/backlogger/console/controllers/BacklogController.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding>
+            <element signature="e#48#230#0" expanded="true" />
           </folding>
         </state>
       </provider>
