@@ -2,12 +2,14 @@ package org.wit.backlogger.console.controllers
 
 import mu.KotlinLogging
 import org.wit.backlogger.console.models.BacklogMemStore
+import org.wit.backlogger.console.models.BackloggerJSONStore
 import org.wit.backlogger.console.models.GameModel
 import org.wit.backlogger.console.views.BacklogView
 
 class BacklogController {
 
-    val games = BacklogMemStore()
+    val games = BackloggerJSONStore()
+    //val games = BacklogMemStore()
     val backlogView = BacklogView()
     val logger = KotlinLogging.logger {}
 
@@ -26,6 +28,7 @@ class BacklogController {
                 2 -> update()
                 3 -> list()
                 4 -> search()
+                5 -> remove()
                 6 -> explainApp()
                 -99 -> fillWithDummy()
                 -1 -> println("Exiting App")
@@ -68,6 +71,24 @@ class BacklogController {
         }
         else
             println("Game Not Updated...")
+    }
+
+    fun remove() {
+        backlogView.listBacklog(games)
+        var searchId = backlogView.getId()
+        val aGame = search(searchId)
+
+        if(aGame != null) {
+            if(backlogView.removeGame(aGame)) {
+                games.remove(aGame)
+                backlogView.showGame(aGame)
+                logger.info("Game Deleted : [ $aGame ]")
+            }
+            else
+                logger.info("Game Not Deleted")
+        }
+        else
+            println("Game Not Deleted...")
     }
 
     fun search() {

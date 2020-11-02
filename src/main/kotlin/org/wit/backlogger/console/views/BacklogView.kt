@@ -1,5 +1,6 @@
 package org.wit.backlogger.console.views
 
+import org.wit.backlogger.console.models.BackloggerJSONStore
 //import org.wit.backlogger.console.main.BacklogView
 //import org.wit.backlogger.console.main.games
 import org.wit.backlogger.console.models.BacklogMemStore
@@ -20,6 +21,7 @@ class BacklogView {
         println(" 2. Update Game")
         println(" 3. List all Games in Backlog")
         println(" 4. Search for a Game in Backlog")
+        println(" 5. Remove a Game from Backlog")
         println(" 6. What is this app for?")
         println("-99. Fill the pp with dummy data")
         println("-1. Exit")
@@ -33,7 +35,7 @@ class BacklogView {
         return option
     }
 
-    fun listBacklog(games : BacklogMemStore) {
+    fun listBacklog(games : BackloggerJSONStore) {
         println("List all Games in Backlog")
         println()
         games.logAll()
@@ -76,6 +78,20 @@ class BacklogView {
             }
         }
         return false
+    }
+
+    fun removeGame(game : GameModel) : Boolean {
+
+
+        if (game != null) {
+
+//            game.remove(game)
+            return true
+        }
+        else
+        {
+            return false
+        }
     }
 
     fun getId() : Long {

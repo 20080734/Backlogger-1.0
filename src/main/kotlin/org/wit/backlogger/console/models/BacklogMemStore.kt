@@ -36,6 +36,13 @@ class BacklogMemStore : GameStore {
         }
     }
 
+    override fun remove(game: GameModel) {
+        var foundGame = findOne(game.id!!)
+        if (foundGame != null) {
+            games.remove(game)
+        }
+    }
+
     internal fun logAll() {
         games.forEach { logger.info("${it}") }
     }
