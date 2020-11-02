@@ -1,12 +1,62 @@
 [
   {
-    "id": -3971063039568830793,
-    "title": "gameJSON1",
-    "description": "DESJSON1"
+    "id": 3441221404401640687,
+    "title": "game1",
+    "description": "des1",
+    "developer": "dev1",
+    "publisher": "pub1",
+    "releaseDate": "2000",
+    "platform": "pc",
+    "genre": "fps",
+    "metacritic": "88",
+    "coverArt": "www.image.com"
   },
   {
-    "id": 4915295533560320641,
-    "title": "GAMEJSON2",
-    "description": "DESJSON2"
+    "id": -691125179266082156,
+    "title": "Counter Strike",
+    "description": "Description for CS",
+    "developer": "Valve",
+    "publisher": "Valve",
+    "releaseDate": "1999",
+    "platform": "PC",
+    "genre": "FPS",
+    "metacritic": "88",
+    "coverArt": "www.coverartimage.com"
+  },
+  {
+    "id": -6422319137969491611,
+    "title": "Half Life",
+    "description": "Description for HL",
+    "developer": "Valve",
+    "publisher": "Valve",
+    "releaseDate": "1998",
+    "platform": "PC",
+    "genre": "FPS",
+    "metacritic": "96",
+    "coverArt": "www.coverartimage.com"
+  },
+  {
+    "id": 488097828525593568,
+    "title": "Dark Souls",
+    "description": "Description for DS",
+    "developer": "From Software",
+    "publisher": "Bandai Namco",
+    "releaseDate": "2010",
+    "platform": "PS3",
+    "genre": "RPG",
+    "metacritic": "97",
+    "coverArt": "www.coverartimage.com"
+  },
+  {
+    "id": -8624676232077422635,
+    "title": "Metal Gear Solid",
+    "description": "Description for MGS",
+    "developer": "Fox Team",
+    "publisher": "Konami",
+    "releaseDate": "1998",
+    "platform": "PS1",
+    "genre": "Action",
+    "metacritic": "99",
+    "coverArt": "www.coverartimage.com"
   }
 ]

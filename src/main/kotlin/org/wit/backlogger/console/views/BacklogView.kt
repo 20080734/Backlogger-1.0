@@ -1,9 +1,6 @@
 package org.wit.backlogger.console.views
 
 import org.wit.backlogger.console.models.BackloggerJSONStore
-//import org.wit.backlogger.console.main.BacklogView
-//import org.wit.backlogger.console.main.games
-import org.wit.backlogger.console.models.BacklogMemStore
 import org.wit.backlogger.console.models.GameModel
 
 class BacklogView {
@@ -46,34 +43,76 @@ class BacklogView {
         if(game != null)
             println("Game Details [ $game ]")
         else
-            println("Placemark Not Found...")
+            println("Game Not Found...")
     }
 
     fun addGameData(game : GameModel) : Boolean {
 
         println()
-        print("Enter a Title : ")
+        print("Enter the game title : ")
         game.title = readLine()!!
-        print("Enter a Description : ")
+        print("Enter a description : ")
         game.description = readLine()!!
+        print("Enter the game's developer : ")
+        game.developer = readLine()!!
+        print("Enter the game's publisher : ")
+        game.publisher = readLine()!!
+        print("Enter the game's releaseDate : ")
+        game.releaseDate = readLine()!!
+        print("Enter the game's platform : ")
+        game.platform = readLine()!!
+        print("Enter the game's genre : ")
+        game.genre = readLine()!!
+        print("Enter the game's Metacritic score: ")
+        game.metacritic = readLine()!!
+        print("Enter a link to the game's cover art : ")
+        game.coverArt = readLine()!!
 
-        return game.title.isNotEmpty() && game.description.isNotEmpty()
+        return game.title.isNotEmpty() && game.description.isNotEmpty() && game.developer.isNotEmpty() && game.publisher.isNotEmpty() && game.releaseDate.isNotEmpty() && game.platform.isNotEmpty() && game.genre.isNotEmpty() && game.metacritic.isNotEmpty() && game.coverArt.isNotEmpty()
     }
 
     fun updateGameData(game : GameModel) : Boolean {
 
         var tempTitle: String?
         var tempDescription: String?
+        var tempDeveloper: String?
+        var tempPublisher: String?
+        var tempReleaseDate: String?
+        var tempPlatform: String?
+        var tempGenre: String?
+        var tempMetacritic: String?
+        var tempCoverArt: String?
 
         if (game != null) {
-            print("Enter a new Title for [ " + game.title + " ] : ")
+            print("Enter a new title for [ " + game.title + " ] : ")
             tempTitle = readLine()!!
-            print("Enter a new Description for [ " + game.description + " ] : ")
+            print("Enter a new description to replace [ " + game.description + " ] : ")
             tempDescription = readLine()!!
+            print("Enter a new developer to replace [ " + game.developer + " ] : ")
+            tempDeveloper = readLine()!!
+            print("Enter a new publisher to replace [ " + game.publisher + " ] : ")
+            tempPublisher = readLine()!!
+            print("Enter a new release date to replace [ " + game.releaseDate + " ] : ")
+            tempReleaseDate = readLine()!!
+            print("Enter a new platform to replace [ " + game.platform + " ] : ")
+            tempPlatform = readLine()!!
+            print("Enter a new genre to replace [ " + game.genre + " ] : ")
+            tempGenre = readLine()!!
+            print("Enter a new Metacritic score to replace [ " + game.metacritic + " ] : ")
+            tempMetacritic = readLine()!!
+            print("Enter a new cover art link to replace [ " + game.coverArt + " ] : ")
+            tempCoverArt = readLine()!!
 
             if (!tempTitle.isNullOrEmpty() && !tempDescription.isNullOrEmpty()) {
                 game.title = tempTitle
                 game.description = tempDescription
+                game.developer = tempDeveloper
+                game.publisher = tempPublisher
+                game.releaseDate = tempReleaseDate
+                game.platform = tempPlatform
+                game.genre = tempGenre
+                game.metacritic = tempMetacritic
+                game.coverArt = tempCoverArt
                 return true
             }
         }
@@ -81,11 +120,7 @@ class BacklogView {
     }
 
     fun removeGame(game : GameModel) : Boolean {
-
-
         if (game != null) {
-
-//            game.remove(game)
             return true
         }
         else

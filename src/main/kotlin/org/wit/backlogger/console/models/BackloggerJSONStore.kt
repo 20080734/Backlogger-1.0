@@ -49,6 +49,13 @@ class BackloggerJSONStore : GameStore {
         if (foundGame != null) {
             foundGame.title = game.title
             foundGame.description = game.description
+            foundGame.developer = game.developer
+            foundGame.publisher = game.publisher
+            foundGame.releaseDate = game.releaseDate
+            foundGame.platform = game.platform
+            foundGame.genre = game.genre
+            foundGame.metacritic = game.metacritic
+            foundGame.coverArt = game.coverArt
         }
         serialize()
     }

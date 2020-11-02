@@ -1,7 +1,6 @@
 package org.wit.backlogger.console.controllers
 
 import mu.KotlinLogging
-import org.wit.backlogger.console.models.BacklogMemStore
 import org.wit.backlogger.console.models.BackloggerJSONStore
 import org.wit.backlogger.console.models.GameModel
 import org.wit.backlogger.console.views.BacklogView
@@ -9,7 +8,6 @@ import org.wit.backlogger.console.views.BacklogView
 class BacklogController {
 
     val games = BackloggerJSONStore()
-    //val games = BacklogMemStore()
     val backlogView = BacklogView()
     val logger = KotlinLogging.logger {}
 
@@ -119,8 +117,10 @@ class BacklogController {
     }
 
     fun fillWithDummy() {
-        games.create(GameModel(1, "GameA", "DesA"))
-        games.create(GameModel(2, "GameB", "DesB"))
-        games.create(GameModel(3, "GameC", "DesC"))
+        games.create(GameModel(3441221404404550687, "Counter Strike", "Description for CS","Valve","Valve","1999","PC","FPS","88","www.coverartimage.com"))
+        games.create(GameModel(4551221404401640687, "Half Life", "Description for HL","Valve","Valve","1998","PC","FPS","96","www.coverartimage.com"))
+        games.create(GameModel(7777221404401640687, "Dark Souls", "Description for DS","From Software","Bandai Namco","2010","PS3","RPG","97","www.coverartimage.com"))
+        games.create(GameModel(7577221404401640687, "Metal Gear Solid", "Description for MGS","Fox Team","Konami","1998","PS1","Action","99","www.coverartimage.com"))
+
     }
 }
