@@ -10,10 +10,13 @@ class BacklogController {
     val games = BackloggerJSONStore()
     val backlogView = BacklogView()
     val logger = KotlinLogging.logger {}
+    val CON_RED="\u001b[31m"
+    val CON_CLEAR="\u001b[0m"
+    val CON_GREEN="\u001b[32m"
 
     init {
         logger.info { "Launching Backlogger Console App" }
-        println("Backlogger Kotlin App Version 1.0")
+        println(CON_GREEN+"Backlogger Kotlin App Version 1.0"+CON_CLEAR)
     }
 
     fun start() {
@@ -28,9 +31,8 @@ class BacklogController {
                 4 -> search()
                 5 -> remove()
                 6 -> explainApp()
-                -99 -> fillWithDummy()
-                -1 -> println("Exiting App")
-                else -> println("Invalid Option")
+                -1 -> println(CON_RED+"Exiting App"+CON_CLEAR)
+                else -> println(CON_RED+"Invalid Option"+CON_CLEAR)
             }
             println()
         } while (input != -1)
@@ -62,13 +64,13 @@ class BacklogController {
             if(backlogView.updateGameData(aGame)) {
                 games.update(aGame)
                 backlogView.showGame(aGame)
-                logger.info("Game Updated : [ $aGame ]")
+                //logger.info("Game Updated : [ $aGame.title ]")
             }
             else
                 logger.info("Game Not Updated")
         }
         else
-            println("Game Not Updated...")
+            println(CON_RED+"Game Not Updated..."+CON_CLEAR)
     }
 
     fun remove() {
@@ -80,13 +82,13 @@ class BacklogController {
             if(backlogView.removeGame(aGame)) {
                 games.remove(aGame)
                 backlogView.showGame(aGame)
-                logger.info("Game Deleted : [ $aGame ]")
+                logger.info("Game Deleted : [ $aGame.title ]")
             }
             else
                 logger.info("Game Not Deleted")
         }
         else
-            println("Game Not Deleted...")
+            println(CON_RED+"Game Not Deleted..."+CON_CLEAR)
     }
 
     fun search() {
@@ -114,13 +116,5 @@ class BacklogController {
         better keep track of these and sort them in order of what 
         you want to play next.
         """)
-    }
-
-    fun fillWithDummy() {
-        games.create(GameModel(3441221404404550687, "Counter Strike", "Description for CS","Valve","Valve","1999","PC","FPS","88","www.coverartimage.com"))
-        games.create(GameModel(4551221404401640687, "Half Life", "Description for HL","Valve","Valve","1998","PC","FPS","96","www.coverartimage.com"))
-        games.create(GameModel(7777221404401640687, "Dark Souls", "Description for DS","From Software","Bandai Namco","2010","PS3","RPG","97","www.coverartimage.com"))
-        games.create(GameModel(7577221404401640687, "Metal Gear Solid", "Description for MGS","Fox Team","Konami","1998","PS1","Action","99","www.coverartimage.com"))
-
     }
 }

@@ -5,25 +5,30 @@ import org.wit.backlogger.console.models.GameModel
 
 class BacklogView {
 
+    val CON_RED="\u001b[31m"
+    val CON_CLEAR="\u001b[0m"
+    val CON_GREEN="\u001b[32m"
+    val CON_CYAN="\u001b[36m"
+
     fun menu() : Int {
 
         var option : Int
         var input: String? = null
 
-        println("~~~ Welcome to ~~~")
-        println("Backlogger Main Menu")
-        println("~~~~~~~~~~~~~~~~~~")
-        println("Enter a number to do any of the following : ")
-        println(" 1. Add a Game")
-        println(" 2. Update Game")
-        println(" 3. List all Games in Backlog")
-        println(" 4. Search for a Game in Backlog")
-        println(" 5. Remove a Game from Backlog")
-        println(" 6. What is this app for?")
-        println("-99. Fill the pp with dummy data")
-        println("-1. Exit")
+        println(CON_RED+"~~~ Welcome to ~~~"+CON_CLEAR)
+        println("Backlogger Main Menu"+CON_CLEAR)
+        println(CON_RED+"~~~~~~~~~~~~~~~~~~"+CON_CLEAR)
+        println("Enter a number to do any of the following : "+CON_CLEAR)
+        println(" 1. "+CON_CYAN+"Add a Game"+CON_CLEAR)
+        println(" 2. "+CON_CYAN+"Update Game"+CON_CLEAR)
+        println(" 3. "+CON_CYAN+"List all Games in Backlog"+CON_CLEAR)
+        println(" 4. "+CON_CYAN+"Search for a Game in Backlog"+CON_CLEAR)
+        println(" 5. "+CON_CYAN+"Remove a Game from Backlog"+CON_CLEAR)
+        println(" 6. "+CON_CYAN+"What is this app for?"+CON_CLEAR)
+        println("-1. "+CON_CYAN+"Exit"+CON_CLEAR)
+        println(CON_RED+"~~~~~~~~~~~~~~~~~~"+CON_CLEAR)
         println()
-        print("Your input : ")
+        print(CON_GREEN+"Your input : "+CON_CLEAR)
         input = readLine()!!
         option = if (input.toIntOrNull() != null && !input.isEmpty())
             input.toInt()
@@ -33,39 +38,54 @@ class BacklogView {
     }
 
     fun listBacklog(games : BackloggerJSONStore) {
-        println("List all Games in Backlog")
+        println(CON_RED+"Listing all Games in Backlog..."+CON_CLEAR)
         println()
         games.logAll()
         println()
     }
 
     fun showGame(game : GameModel) {
-        if(game != null)
+        if(game != null){
             println("Game Details [ $game ]")
-        else
-            println("Game Not Found...")
+            println(CON_RED+"================================="+CON_CLEAR)
+            println(CON_RED+"¦ "+CON_GREEN+game.title+CON_CLEAR)
+            println(CON_RED+"------------------------------"+CON_CLEAR)
+            println(CON_RED+"¦"+CON_CYAN+" Description : "+CON_CLEAR + game.description)
+            println(CON_RED+"¦"+CON_CYAN+" Developer : "+CON_CLEAR + game.developer)
+            println(CON_RED+"¦"+CON_CYAN+" Publisher : "+CON_CLEAR + game.publisher)
+            println(CON_RED+"¦"+CON_CYAN+" Release Date : "+CON_CLEAR + game.releaseDate)
+            println(CON_RED+"¦"+CON_CYAN+" Platform : "+CON_CLEAR + game.platform)
+            println(CON_RED+"¦"+CON_CYAN+" Genre : "+CON_CLEAR + game.genre)
+            println(CON_RED+"¦"+CON_CYAN+" Metacritic Score : "+CON_CLEAR + game.metacritic)
+            println(CON_RED+"¦"+CON_CYAN+" Link To Cover Art : "+CON_CLEAR + game.coverArt)
+            println(CON_RED+"¦"+CON_CYAN+" ID : "+CON_CLEAR + game.id)
+            println(CON_RED+"================================="+CON_CLEAR)
+            println("\n")}
+        else{
+            println(CON_RED+"Game Not Found..."+CON_CLEAR)
+        }
     }
 
     fun addGameData(game : GameModel) : Boolean {
 
         println()
-        print("Enter the game title : ")
+        print(CON_GREEN+"Enter the game title : "+CON_CLEAR)
         game.title = readLine()!!
-        print("Enter a description : ")
+        print(CON_GREEN+"Enter a description : "+CON_CLEAR)
         game.description = readLine()!!
-        print("Enter the game's developer : ")
+        print(CON_GREEN+"Enter the game's developer : "+CON_CLEAR)
         game.developer = readLine()!!
-        print("Enter the game's publisher : ")
+        print(CON_GREEN+"Enter the game's publisher : "+CON_CLEAR)
         game.publisher = readLine()!!
-        print("Enter the game's releaseDate : ")
+        print(CON_GREEN+"Enter the game's releaseDate : "+CON_CLEAR)
         game.releaseDate = readLine()!!
-        print("Enter the game's platform : ")
+        print(CON_GREEN+"Enter the game's platform : "+CON_CLEAR)
         game.platform = readLine()!!
-        print("Enter the game's genre : ")
+        print(CON_GREEN+"Enter the game's genre : "+CON_CLEAR)
         game.genre = readLine()!!
-        print("Enter the game's Metacritic score: ")
+        print(CON_GREEN+"Enter the game's Metacritic score: "+CON_CLEAR)
         game.metacritic = readLine()!!
-        print("Enter a link to the game's cover art : ")
+        print(CON_GREEN+"Enter a link to the game's cover art : "+CON_CLEAR)
         game.coverArt = readLine()!!
 
         return game.title.isNotEmpty() && game.description.isNotEmpty() && game.developer.isNotEmpty() && game.publisher.isNotEmpty() && game.releaseDate.isNotEmpty() && game.platform.isNotEmpty() && game.genre.isNotEmpty() && game.metacritic.isNotEmpty() && game.coverArt.isNotEmpty()
@@ -84,23 +104,23 @@ class BacklogView {
         var tempCoverArt: String?
 
         if (game != null) {
-            print("Enter a new title for [ " + game.title + " ] : ")
+            print(CON_GREEN+"Enter a new title for [ " +CON_CYAN+ game.title +CON_GREEN+ " ] : "+CON_CLEAR)
             tempTitle = readLine()!!
-            print("Enter a new description to replace [ " + game.description + " ] : ")
+            print(CON_GREEN+"Enter a new description to replace [ " +CON_CYAN+ game.description +CON_GREEN+ " ] : "+CON_CLEAR)
             tempDescription = readLine()!!
-            print("Enter a new developer to replace [ " + game.developer + " ] : ")
+            print(CON_GREEN+"Enter a new developer to replace [ " +CON_CYAN+ game.developer +CON_GREEN+ " ] : "+CON_CLEAR)
             tempDeveloper = readLine()!!
-            print("Enter a new publisher to replace [ " + game.publisher + " ] : ")
+            print(CON_GREEN+"Enter a new publisher to replace [ " +CON_CYAN+ game.publisher +CON_GREEN+ " ] : "+CON_CLEAR)
             tempPublisher = readLine()!!
-            print("Enter a new release date to replace [ " + game.releaseDate + " ] : ")
+            print(CON_GREEN+"Enter a new release date to replace [ " +CON_CYAN+ game.releaseDate +CON_GREEN+ " ] : "+CON_CLEAR)
             tempReleaseDate = readLine()!!
-            print("Enter a new platform to replace [ " + game.platform + " ] : ")
+            print(CON_GREEN+"Enter a new platform to replace [ " +CON_CYAN+ game.platform +CON_GREEN+ " ] : "+CON_CLEAR)
             tempPlatform = readLine()!!
-            print("Enter a new genre to replace [ " + game.genre + " ] : ")
+            print(CON_GREEN+"Enter a new genre to replace [ " +CON_CYAN+ game.genre + " ] : "+CON_CLEAR)
             tempGenre = readLine()!!
-            print("Enter a new Metacritic score to replace [ " + game.metacritic + " ] : ")
+            print(CON_GREEN+"Enter a new Metacritic score to replace [ " +CON_CYAN+ game.metacritic + " ] : "+CON_CLEAR)
             tempMetacritic = readLine()!!
-            print("Enter a new cover art link to replace [ " + game.coverArt + " ] : ")
+            print(CON_GREEN+"Enter a new cover art link to replace [ " +CON_CYAN+ game.coverArt + " ] : "+CON_CLEAR)
             tempCoverArt = readLine()!!
 
             if (!tempTitle.isNullOrEmpty() && !tempDescription.isNullOrEmpty()) {
@@ -132,7 +152,7 @@ class BacklogView {
     fun getId() : Long {
         var strId : String? // String to hold user input
         var searchId : Long // Long to hold converted id
-        print("Enter id to Search/Update : ")
+        print(CON_GREEN+"Enter game id to continue : "+CON_CLEAR)
         strId = readLine()!!
         searchId = if (strId.toLongOrNull() != null && !strId.isEmpty())
             strId.toLong()

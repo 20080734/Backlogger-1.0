@@ -10,6 +10,13 @@ import java.util.*
 
 private val logger = KotlinLogging.logger {}
 
+const val CON_RED="\u001b[31m"
+const val CON_CLEAR="\u001b[0m"
+const val CON_GREEN="\u001b[32m"
+const val CON_CYAN="\u001b[36m"
+
+
+
 val JSON_FILE = "games.json"
 val gsonBuilder = GsonBuilder().setPrettyPrinting().create()
 val listType = object : TypeToken<java.util.ArrayList<GameModel>>() {}.type
@@ -69,7 +76,21 @@ class BackloggerJSONStore : GameStore {
     }
 
     internal fun logAll() {
-        games.forEach { logger.info("${it}") }
+        //games.forEach { logger.info("${it}")}
+        games.forEach { println(CON_RED+"================================="+CON_CLEAR)
+                        println(CON_RED+"¦ "+CON_GREEN+it.title+CON_CLEAR)
+                        println(CON_RED+"------------------------------"+CON_CLEAR)
+                        println(CON_RED+"¦"+CON_CYAN+" Description : "+CON_CLEAR + it.description)
+                        println(CON_RED+"¦"+CON_CYAN+" Developer : "+CON_CLEAR + it.developer)
+                        println(CON_RED+"¦"+CON_CYAN+" Publisher : "+CON_CLEAR + it.publisher)
+                        println(CON_RED+"¦"+CON_CYAN+" Release Date : "+CON_CLEAR + it.releaseDate)
+                        println(CON_RED+"¦"+CON_CYAN+" Platform : "+CON_CLEAR + it.platform)
+                        println(CON_RED+"¦"+CON_CYAN+" Genre : "+CON_CLEAR + it.genre)
+                        println(CON_RED+"¦"+CON_CYAN+" Metacritic Score : "+CON_CLEAR + it.metacritic)
+                        println(CON_RED+"¦"+CON_CYAN+" Link To Cover Art : "+CON_CLEAR + it.coverArt)
+                        println(CON_RED+"¦"+CON_CYAN+" ID : "+CON_CLEAR + it.id)
+                        println(CON_RED+"================================="+CON_CLEAR)
+                        println("\n")}
     }
 
     private fun serialize() {
