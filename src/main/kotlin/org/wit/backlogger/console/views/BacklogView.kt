@@ -5,13 +5,14 @@ import org.wit.backlogger.console.models.GameModel
 
 class BacklogView {
 
+    //Colours for console
     val CON_RED="\u001b[31m"
     val CON_CLEAR="\u001b[0m"
     val CON_GREEN="\u001b[32m"
     val CON_CYAN="\u001b[36m"
 
+    //Menu View
     fun menu() : Int {
-
         var option : Int
         var input: String? = null
 
@@ -37,6 +38,7 @@ class BacklogView {
         return option
     }
 
+    //Prints existing games in backlog
     fun listBacklog(games : BackloggerJSONStore) {
         println(CON_RED+"Listing all Games in Backlog..."+CON_CLEAR)
         println()
@@ -44,6 +46,7 @@ class BacklogView {
         println()
     }
 
+    //Displays information on a single game
     fun showGame(game : GameModel) {
         if(game != null){
             println("Game Details [ $game ]")
@@ -66,6 +69,7 @@ class BacklogView {
         }
     }
 
+    //Displays inputs needed for adding a game
     fun addGameData(game : GameModel) : Boolean {
 
         println()
@@ -91,6 +95,7 @@ class BacklogView {
         return game.title.isNotEmpty() && game.description.isNotEmpty() && game.developer.isNotEmpty() && game.publisher.isNotEmpty() && game.releaseDate.isNotEmpty() && game.platform.isNotEmpty() && game.genre.isNotEmpty() && game.metacritic.isNotEmpty() && game.coverArt.isNotEmpty()
     }
 
+    //Displays inputs for updating a game
     fun updateGameData(game : GameModel) : Boolean {
 
         var tempTitle: String?
@@ -139,6 +144,7 @@ class BacklogView {
         return false
     }
 
+    //Displays nothing, just used to complete the Delete function
     fun removeGame(game : GameModel) : Boolean {
         if (game != null) {
             return true
@@ -149,9 +155,10 @@ class BacklogView {
         }
     }
 
+    //Displays request for ID
     fun getId() : Long {
-        var strId : String? // String to hold user input
-        var searchId : Long // Long to hold converted id
+        var strId : String?
+        var searchId : Long
         print(CON_GREEN+"Enter game id to continue : "+CON_CLEAR)
         strId = readLine()!!
         searchId = if (strId.toLongOrNull() != null && !strId.isEmpty())

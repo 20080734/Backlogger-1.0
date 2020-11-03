@@ -19,6 +19,7 @@ class BacklogController {
         println(CON_GREEN+"Backlogger Kotlin App Version 1.0"+CON_CLEAR)
     }
 
+    //Input menu for each function
     fun start() {
         var input: Int
 
@@ -41,6 +42,7 @@ class BacklogController {
 
     fun menu() :Int { return backlogView.menu() }
 
+    //Adds a game to the backlog
     fun add(){
         var aGame = GameModel()
 
@@ -50,12 +52,13 @@ class BacklogController {
             logger.info("Game Not Added")
     }
 
+    //Displays the current backlog
     fun list() {
         backlogView.listBacklog(games)
     }
 
+    //Updates a game identified by ID
     fun update() {
-
         backlogView.listBacklog(games)
         var searchId = backlogView.getId()
         val aGame = search(searchId)
@@ -73,6 +76,7 @@ class BacklogController {
             println(CON_RED+"Game Not Updated..."+CON_CLEAR)
     }
 
+    //Similar to Update function, removes a game by ID
     fun remove() {
         backlogView.listBacklog(games)
         var searchId = backlogView.getId()
@@ -91,18 +95,17 @@ class BacklogController {
             println(CON_RED+"Game Not Deleted..."+CON_CLEAR)
     }
 
+    //Search functions using ID
     fun search() {
         val aGame = search(backlogView.getId())!!
         backlogView.showGame(aGame)
     }
-
-
     fun search(id: Long) : GameModel? {
         var foundGame = games.findOne(id)
         return foundGame
     }
 
-
+    //Basic function to act as an in app read.me
     fun explainApp() {
         println("""
         Backlogger is a simple console app that allows you 
@@ -112,9 +115,10 @@ class BacklogController {
         app is optimised for games ) that you don't have time to 
         enjoy yet, but you wish to try later. 
         
-        With the help of the Backlogger app you can 
-        better keep track of these and sort them in order of what 
-        you want to play next.
+        This particular version of Backlogger allows you
+        to Create, Read, Update and Delete new or existing 
+        games and add them to the backlog. You can also
+        search the backlog for existing entries by ID.
         """)
     }
 }

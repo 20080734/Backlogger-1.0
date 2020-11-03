@@ -14,18 +14,16 @@ const val CON_RED="\u001b[31m"
 const val CON_CLEAR="\u001b[0m"
 const val CON_GREEN="\u001b[32m"
 const val CON_CYAN="\u001b[36m"
-
-
-
 val JSON_FILE = "games.json"
 val gsonBuilder = GsonBuilder().setPrettyPrinting().create()
 val listType = object : TypeToken<java.util.ArrayList<GameModel>>() {}.type
 
+//Generates a random Long to be used as game ID
 fun generateRandomId(): Long {
     return Random().nextLong()
 }
 
-
+//JSON STORE class to allow for persistence
 class BackloggerJSONStore : GameStore {
 
     var games = mutableListOf<GameModel>()
@@ -75,6 +73,7 @@ class BackloggerJSONStore : GameStore {
         serialize()
     }
 
+    //Layout for how each game is printed in console
     internal fun logAll() {
         //games.forEach { logger.info("${it}")}
         games.forEach { println(CON_RED+"================================="+CON_CLEAR)
