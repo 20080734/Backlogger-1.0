@@ -1,15 +1,15 @@
 [
   {
     "id": 3441221404401640687,
-    "title": "gameNEW",
-    "description": "DESNEW",
-    "developer": "",
-    "publisher": "",
-    "releaseDate": "",
-    "platform": "",
-    "genre": "",
-    "metacritic": "",
-    "coverArt": ""
+    "title": "gameTEST",
+    "description": "desTEST",
+    "developer": "devTEST",
+    "publisher": "pubTEST",
+    "releaseDate": "relTEST",
+    "platform": "plaTEST",
+    "genre": "genTEST",
+    "metacritic": "metTEST",
+    "coverArt": "covTEST"
   },
   {
     "id": -691125179266082156,

@@ -121,11 +121,11 @@ class BacklogView {
             tempReleaseDate = readLine()!!
             print(CON_GREEN+"Enter a new platform to replace [ " +CON_CYAN+ game.platform +CON_GREEN+ " ] : "+CON_CLEAR)
             tempPlatform = readLine()!!
-            print(CON_GREEN+"Enter a new genre to replace [ " +CON_CYAN+ game.genre + " ] : "+CON_CLEAR)
+            print(CON_GREEN+"Enter a new genre to replace [ " +CON_CYAN+ game.genre +CON_GREEN+ " ] : "+CON_CLEAR)
             tempGenre = readLine()!!
-            print(CON_GREEN+"Enter a new Metacritic score to replace [ " +CON_CYAN+ game.metacritic + " ] : "+CON_CLEAR)
+            print(CON_GREEN+"Enter a new Metacritic score to replace [ " +CON_CYAN+ game.metacritic +CON_GREEN+ " ] : "+CON_CLEAR)
             tempMetacritic = readLine()!!
-            print(CON_GREEN+"Enter a new cover art link to replace [ " +CON_CYAN+ game.coverArt + " ] : "+CON_CLEAR)
+            print(CON_GREEN+"Enter a new cover art link to replace [ " +CON_CYAN+ game.coverArt +CON_GREEN+ " ] : "+CON_CLEAR)
             tempCoverArt = readLine()!!
 
             if (!tempTitle.isNullOrEmpty() && !tempDescription.isNullOrEmpty()) {
